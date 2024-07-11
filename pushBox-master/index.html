@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #game {
+            position: relative;
+            width: 560px;
+            height: 560px;
+            background-color: #73e029;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        #game > img {
+            display: none;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #menu {
+            width: 200px;
+            height: 100px;
+            background-color: rgba(0, 211, 225, 0.5);
+            border-radius: 20px;
+            position: absolute;
+            bottom: 10px;
+            right: -180px;
+            box-shadow: aliceblue 0 0 10px;
+            transition: all 1s;
+        }
+        #menu:hover {
+            width: 380px;
+        }
+        #menu > input {
+            margin-top: 20px;
+            margin-left: 25px;
+            width: 150px;
+        }
+        #text {
+            width: 20px;
+            height: 100%;
+            color: white;
+            position: absolute;
+            line-height: 50px;
+        }
+        #button {
+            margin-top: 20px;
+            margin-left: 45px;
+        }
+        #button > button {
+            color: #3684be;
+        }
+        #controls {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+        .quiz-option {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .quiz-option:hover {
+            background-color: #f0f0f0;
+        }
+        #quiz {
+        width: 300px;
+        padding: 20px;
+        border: 2px solid #3684be;
+        border-radius: 10px;
+        background-color: #fff; /* 默认背景色 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    </style>
+    <script src="JS/mapdata100.js"></script>
+    <script src="JS/boxGame.js"></script>
+</head>
+<body>
+    <div id="quiz">
+        <div id="question"></div>
+        <div id="options"></div>
+    </div>
+    <div id="game">
+        <canvas id="canvas1" width="560px" height="560px"></canvas>
+        <canvas id="canvas2" width="560px" height="560px"></canvas>
+        <img src="img/wall.png">
+        <img src="img/box.png">
+        <img src="img/yelloball.png">
+        <img src="img/block.gif">
+         <div id="menu">
+             <div id="text">菜单</div>
+              <input id="guaQia">
+             <div id="button">
+                <button id="jump">跳关</button>
+                 <button id="replay">重玩本关</button>
+              </div>
+           </div>
+     </div>
+    <div id="controls">
+        <button id="left-btn">左</button>
+        <button id="up-btn">上</button>
+        <button id="right-btn">右</button>
+        <button id="down-btn">下</button>
+    </div>
+</body>
+</html>
